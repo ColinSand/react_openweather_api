@@ -1,0 +1,35 @@
+{
+  "coord": { "lon": -95.9378, "lat": 41.2586 },
+  "weather": [
+    {
+      "id": 803,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 287.57,
+    "feels_like": 285.75,
+    "temp_min": 287,
+    "temp_max": 289.09,
+    "pressure": 1012,
+    "humidity": 26
+  },
+  "visibility": 10000,
+  "wind": { "speed": 9.77, "deg": 310, "gust": 13.38 },
+  "clouds": { "all": 75 },
+  "dt": 1644359691,
+  "sys": {
+    "type": 1,
+    "id": 5204,
+    "country": "US",
+    "sunrise": 1644326842,
+    "sunset": 1644364116
+  },
+  "timezone": -21600,
+  "id": 5074472,
+  "name": "Omaha",
+  "cod": 200
+}
