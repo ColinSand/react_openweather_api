@@ -18,6 +18,26 @@ h1 {
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
 }
+
+.app .search {
+  text-align: center;
+  padding: 1rem;
+}
+
+.app input {
+  text-align: center;
+  padding: 0.7rem;
+  font-size: 1.2 rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
+
 .app::before {
   content: "";
   background: url("./pictures/sky-dark-light-clouds.jpeg") no-repeat center
