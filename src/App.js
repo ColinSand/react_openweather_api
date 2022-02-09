@@ -22,8 +22,6 @@ export default function App() {
 
   return (
     <div className="app">
-      {" "}
-      Test
       <div className="search">
         <input
           value={location}
@@ -39,21 +37,26 @@ export default function App() {
             <p>{data.name}</p>
           </div>
           <div className="temp">
-            {data.main ? <h1>{data.main.temp} °F</h1> : null}
+            {data.main ? <h1>{data.main.temp.toFixed()} °F</h1> : null}
           </div>
-          <div className="description">{data.weather[0].main}</div>
+          {data.main ? <p>{data.weather[0].main} </p> : null}
+          {/* <div className="description">{data.weather[0].main}</div> */}
         </div>
 
         {data.name !== undefined && (
           <div className="bottom">
             <div className="feels like:">
-              {data.main ? <p>Feels Like: {data.main.feels_like} °F</p> : null}
+              {data.main ? (
+                <p>Feels Like: {data.main.feels_like.toFixed()} °F</p>
+              ) : null}
             </div>
             <div className="humidity">
               {data.main ? <p>Humidity: {data.main.humidity} %</p> : null}
             </div>
             <div className="wind">
-              {data.main ? <p>Wind Speed: {data.wind.speed} Mph</p> : null}
+              {data.main ? (
+                <p>Wind Speed: {data.wind.speed.toFixed()} Mph</p>
+              ) : null}
             </div>
           </div>
         )}
