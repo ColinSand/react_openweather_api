@@ -10,6 +10,20 @@ export default function App() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=b1fe57d7c51185c339fd5482541c08ef
   `;
 
+  // My attempt at running a query for Lincoln on start
+  const initialSearch = () => {
+    setLocation("Lincoln");
+    axios.get(url).then((response) => {
+      setData(response.data);
+      console.log(response.data);
+    });
+  };
+
+  if (data === {}) {
+    setLocation("Lincoln");
+    initialSearch();
+  }
+
   const searchLocation = (event) => {
     if (event.key === `Enter`) {
       axios.get(url).then((response) => {
@@ -40,7 +54,6 @@ export default function App() {
             {data.main ? <h1>{data.main.temp.toFixed()} °F</h1> : null}
           </div>
           {data.main ? <p>{data.weather[0].main} </p> : null}
-          {/* <div className="description">{data.weather[0].main}</div> */}
         </div>
 
         {data.name !== undefined && (
