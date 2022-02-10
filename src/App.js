@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function App() {
   // stores the response data and the location sent to the api in state
   const [data, setData] = useState({});
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("Lincoln");
 
   // brings in the API url to be queried
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=b1fe57d7c51185c339fd5482541c08ef
@@ -12,17 +12,16 @@ export default function App() {
 
   // My attempt at running a query for Lincoln on start
   const initialSearch = () => {
-    setLocation("Lincoln");
     axios.get(url).then((response) => {
       setData(response.data);
       console.log(response.data);
     });
+    setLocation(``);
   };
 
-  if (data === {}) {
-    setLocation("Lincoln");
+  useEffect(() => {
     initialSearch();
-  }
+  }, []);
 
   const searchLocation = (event) => {
     if (event.key === `Enter`) {
